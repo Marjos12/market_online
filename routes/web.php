@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//login view
+Route::get('login_pg',function(){
+    return view('login.index');
+});
+
+
+//login auth
+Route::POST('login','login_c@login');
+
+//admin panel
+Route::get('admin_pg',function (){
+    return view('admin.panel');
+});
