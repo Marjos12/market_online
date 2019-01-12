@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,15 +20,22 @@ Route::get('/', function () {
 
 
 //login view
-Route::get('login_pg',function(){
+Route::get('login_pg', function () {
     return view('login.index');
 });
 
 
 //login auth
-Route::POST('login','login_c@login');
+Route::POST('login', 'login_c@login');
 
 //admin panel
-Route::get('admin_pg',function (){
-    return view('admin.panel');
+Route::get('admin_pg', function () {
+    //check session
+    $session = Session::get('admin');
+    if (!empty($session)) {
+        return view('admin.panel');
+    } else {
+        return redirect::to('login_pg')->with('messages', 'Please login in order to access the system');
+    }
+
 });
