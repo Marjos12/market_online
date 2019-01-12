@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Foundation\Auth\user;
+use Illuminate\Support\Facades\Auth;
+session_start();
 
 
 class login_c extends Controller
@@ -49,9 +52,8 @@ class login_c extends Controller
                         switch ($key->ROLI) {
                             case 'admin':
 
-                                Session::put('admin', $username);
+                                Session::put('admin',$username);
                                 return redirect::to('admin_pg');
-
                                 break;
                         }
 

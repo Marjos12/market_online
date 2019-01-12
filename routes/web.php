@@ -1,7 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,7 @@ Route::POST('login', 'login_c@login');
 //admin panel
 Route::get('admin_pg', function () {
     //check session
+
     $session = Session::get('admin');
     if (!empty($session)) {
         return view('admin.panel');
@@ -38,4 +39,10 @@ Route::get('admin_pg', function () {
         return redirect::to('login_pg')->with('messages', 'Please login in order to access the system');
     }
 
+});
+
+//log out rout
+Route::get('logout',function (){
+    session()->flush();
+    return redirect('login_pg')->with('messages','You are logout sucessfully');
 });

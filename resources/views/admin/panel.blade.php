@@ -1,3 +1,10 @@
+<?php
+session_start();
+//check the session status
+ if(!isset($_SESSION['admin'])){
+  header('location:../login/index.blade.php');
+ }
+?>
 <html>
 <header>
     <title>
@@ -9,6 +16,10 @@
     <!-- upper link div design !-->
     <div class="icon">
         <span>Hello</span>
+    </div>
+
+    <div class="links">
+        <a href="logout">Logout</a>
     </div>
 </div>
 <div class="sidebar">
