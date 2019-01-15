@@ -70,6 +70,6 @@ Route::get('user_add',function(){
 });
 
 //upload user route
-Route::POST('add_user','regist_user@add_user');
+Route::POST('upload','regist_user@add_user');
 
 

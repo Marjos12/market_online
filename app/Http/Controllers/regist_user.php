@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Foundation\Auth\user;
+use Illuminate\Support\Facades\Auth;
 
 class regist_user extends Controller
 {
-	$validation = "";
+	var $validation ;
     //validate data
     public function validate_data(Request $request){
     	$data = $request->all();

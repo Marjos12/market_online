@@ -11,6 +11,7 @@
     	<div class="side">
  	<ul class="main-ul">
  		<form method="POST" action="upload">
+ 			{{csrf_field()}}
  	      <li class="liste">
  		   	<input type="text" name="username" placeholder="user" required="">
  		  </li>
