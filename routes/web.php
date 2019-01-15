@@ -46,3 +46,9 @@ Route::get('logout',function (){
     session()->flush();
     return redirect('login_pg')->with('messages','You are logout sucessfully');
 });
+
+
+//add user route
+Route::get('user_add',function(){
+ return view('regist_usr');
+});
