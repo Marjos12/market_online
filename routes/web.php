@@ -47,8 +47,29 @@ Route::get('logout',function (){
     return redirect('login_pg')->with('messages','You are logout sucessfully');
 });
 
+//supermarket route
+Route::get('supermarket',function(){
 
+     $session = Session::get('admin');
+    if (!empty($session)) {
+        return view('admin.supermarket');
+    } else {
+        return redirect::to('login_pg')->with('messages', 'Please login in order to access the system');
+    }
+    
+});
 //add user route
 Route::get('user_add',function(){
- return view('regist_usr');
+     $session = Session::get('admin');
+     if (!empty($session)) {
+         return view('regist_usr');
+    } else {
+        return redirect::to('login_pg')->with('messages', 'Please login in order to access the system');
+    }
+
 });
+
+//upload user route
+Route::POST('add_user','regist_user@add_user');
+
+

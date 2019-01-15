@@ -25,7 +25,7 @@ session_start();
 <div class="sidebar">
     <div class="Links">
         <ul class="side_link">
-            <li class="ad_link"><a href="user_add">Supermarket</a></li>
+            <li class="ad_link"><a href="supermarket">Supermarket</a></li>
         </ul>
     </div>
 </div>

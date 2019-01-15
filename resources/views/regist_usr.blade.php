@@ -5,6 +5,10 @@
 </head>
 <body>
  <div class="main">
+
+ 	<ul class="ul">
+    <li class="li-side">
+    	<div class="side">
  	<ul class="main-ul">
  		<form method="POST" action="upload">
  	      <li class="liste">
@@ -49,6 +53,12 @@
           </li>
  		</form>
  	</ul>
+ </div>
+</li>
+<li class="li-side">
+	<div class="error"></div>
+</li>
+</ul>
  </div>
 </body>
 </html>
